@@ -1,0 +1,35 @@
+.input {
+    width: 40%;
+    border-radius: 8px;
+    border: 2px solid #83c046;
+    padding: 10px 15px;
+    box-shadow: 1px 3px 9px rgba(0, 0, 0, 0.25);
+}
+
+input:focus {
+    outline: none;
+}
+
+.btn {
+    box-shadow: 1px 3px 9px rgba($color: #000000, $alpha: 0.25);
+    background-color: #83c046;
+    color: #d2e054;
+    border-color: #83c046;
+}
+
+.btn:hover,
+.btn:focus {
+    background-color: #d2e054;
+    color: #83c046;
+    border-color: #e5eba5;
+}
+
+.btn-primary {
+    outline: none !important;
+}
+
+@media (max-width: 576px) {
+    .input {
+        width: 80%;
+    }
+}

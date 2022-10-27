@@ -4,15 +4,17 @@ import './App.css';
 
 import Cards from './components/Cards/Cards'; //Card display module for characters
 import Pagination from './components/Pagination/Pagination'; //React Pagination module
+import Search from './components/Search/Search'; //Searchbar module
 
 import React, {useEffect, useState} from "react";
 
 function App() {
   const [pageNumber, setPageNumber] = useState(1) //page state variables
+  const [search, setSearch] = useState("") // search input state variable
   const [fetchedData, setFetchedData] = useState([]) // api data state variable
   const {info, results} = fetchedData; // destructuring api data
 
-  const api = `https://rickandmortyapi.com/api/character/`; //api url from documentation of api
+  const api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`; //api url from documentation of api
 
   useEffect( () => {
     (async function(){
@@ -24,6 +26,8 @@ function App() {
   return (
     <div className="App">
       <h1 className="my-4">Rick & Morty Character Search Engine</h1>
+
+      <Search setPageNumber={setPageNumber} setSearch={setSearch} />
 
       <div className="container">
         <div className="row">
@@ -38,7 +42,7 @@ function App() {
 
 
       <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
-      
+
     </div>
   );
 }
