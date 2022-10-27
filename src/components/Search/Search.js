@@ -7,7 +7,6 @@ function Search({ setSearch, setPageNumber}) {
     function searchTrigger(e) {
          setPageNumber(1) // shows only one page as a result
          setSearch(e.target.value) //updates Search state variable with user input
-         console.log(e.target.value)
     }
  
     return (
