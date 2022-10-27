@@ -3,10 +3,12 @@ import 'bootstrap/dist/js/bootstrap'; //imported bootstrap js
 import './App.css';
 
 import Cards from './components/Cards/Cards'; //Card display module for characters
+import Pagination from './components/Pagination/Pagination'; //React Pagination module
 
 import React, {useEffect, useState} from "react";
 
 function App() {
+  const [pageNumber, setPageNumber] = useState(1) //page state variables
   const [fetchedData, setFetchedData] = useState([]) // api data state variable
   const {info, results} = fetchedData; // destructuring api data
 
@@ -34,6 +36,9 @@ function App() {
         </div>
       </div>
 
+
+      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber} />
+      
     </div>
   );
 }
