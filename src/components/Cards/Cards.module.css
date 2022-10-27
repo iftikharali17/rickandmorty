@@ -1,0 +1,13 @@
+.cards {
+    border: 2px solid #83c046;
+    border-radius: 10px;
+}
+
+.img {
+    border-radius: 10px 10px 0 0;
+}
+
+.cardContent {
+    padding: 10px;
+    color: #39670b;
+}
